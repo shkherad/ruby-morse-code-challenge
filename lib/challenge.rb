@@ -17,8 +17,24 @@ MORSE_CODE = {
 
 def decode_morse(morse_code)
   # Your code here
+  message = []
+  words = morse_code.split('   ');
+  words.each do |word|
+    # insert code here
+    letters = word.split(' ')
+    word = []
+    letters.each do |letter|
+    word<<MORSE_CODE[letter]
+    end
+    message<<word
+  end
+
+p message
 end
 
 def parse_bits(bits)
   # Your code here
+
 end
+
+decode_morse('.-   -.-. .- -')
